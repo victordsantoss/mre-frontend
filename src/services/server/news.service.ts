@@ -6,9 +6,7 @@ import { News } from '@/services/domain/news.types'
 import { IPaginatedResponse } from '@/common/types/base-pagination.types'
 
 export async function listNews(filters: News.IListNewsRequest) {
-  return await apiFetch<
-    IFetchSuccessResponse<IPaginatedResponse<News.IListNewsResponse>>
-  >(
+  return await apiFetch<IFetchSuccessResponse<IPaginatedResponse<News.INews>>>(
     '/news',
     {
       method: 'GET',

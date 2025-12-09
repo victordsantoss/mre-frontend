@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { IPaginatedResponse } from '@/common/types/base-pagination.types'
 import { News } from '@/services/domain/news.types'
 import { Eye, Edit, Trash2 } from '@deemlol/next-icons'
 import moment from 'moment'
@@ -13,7 +12,7 @@ import { useTableModel } from './table.model'
 import './styles.css'
 
 interface INewsTableProps {
-  news: IPaginatedResponse<News.IListNewsResponse>
+  news: News.IListNewsResponse
 }
 
 export function NewsTable({ news }: INewsTableProps) {

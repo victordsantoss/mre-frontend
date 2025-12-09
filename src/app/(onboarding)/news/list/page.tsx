@@ -26,8 +26,7 @@ export default async function Page({ searchParams }: PageProps) {
     search,
   })
 
-  const newsData =
-    handleApiError<IPaginatedResponse<News.IListNewsResponse>>(news)
+  const newsData = handleApiError<IPaginatedResponse<News.INews>>(news)
 
   return <ListNews news={newsData} />
 }

@@ -3,9 +3,9 @@
 import { revalidateTag } from 'next/cache'
 
 export async function revalidateAllTags() {
-  revalidateTag('*')
+  revalidateTag('*', 'force-cache')
 }
 
 export async function revalidateNewsList() {
-  revalidateTag('list-news')
+  revalidateTag('list-news', 'force-cache')
 }

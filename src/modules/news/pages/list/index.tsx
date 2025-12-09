@@ -1,16 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { IPaginatedResponse } from '@/common/types/base-pagination.types'
 import { News } from '@/services/domain/news.types'
 import { NewsFilter } from './components/filter'
 import { NewsTable } from './components/table'
 import { Button } from '@/components/button'
 import { CreateNewsModal } from '../components/create-modal'
 import './styles.css'
+import { IPaginatedResponse } from '@/common/types/base-pagination.types'
 
 interface IListNewsProps {
-  news: IPaginatedResponse<News.IListNewsResponse>
+  news: IPaginatedResponse<News.INews>
 }
 
 export function ListNews({ news }: IListNewsProps) {
