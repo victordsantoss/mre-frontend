@@ -88,6 +88,15 @@ npm start
 
 ## 🐳 Docker
 
+### Configuração da API
+
+Antes de rodar com Docker, configure a URL da API no `docker-compose.yml`:
+
+```yaml
+environment:
+  - NEXT_PUBLIC_API_URL=http://host.docker.internal:8000  # Ajuste para seu backend
+```
+
 ### Usando Docker Compose (Recomendado)
 
 ```bash
@@ -290,10 +299,36 @@ const data = await ServiceName.method()
 
 ## 🔐 Variáveis de Ambiente
 
+### Desenvolvimento Local
 ```env
+<<<<<<< Updated upstream
 NEXT_PUBLIC_API_URL=http://localhost:3000
 
+=======
+# .env.local
+NEXT_PUBLIC_API_URL=http://localhost:8000
+>>>>>>> Stashed changes
 ```
+
+### Docker
+Configure no `docker-compose.yml`:
+```yaml
+environment:
+  # Backend no host (Mac/Windows/Linux com Docker Desktop)
+  - NEXT_PUBLIC_API_URL=http://host.docker.internal:8000
+  
+  # Ou backend em outro container
+  # - NEXT_PUBLIC_API_URL=http://nome-do-container-backend:8000
+  
+  # Ou API externa
+  # - NEXT_PUBLIC_API_URL=https://api.seudominio.com
+```
+
+### Variáveis Disponíveis
+- `PORT` - Porta do servidor (padrão: 3000)
+- `NEXT_PUBLIC_API_URL` - URL base da API backend
+- `NODE_ENV` - Ambiente (development/production)
+- `NEXT_TELEMETRY_DISABLED` - Desabilitar telemetria do Next.js
 
 ## 🤝 Contribuindo
 
