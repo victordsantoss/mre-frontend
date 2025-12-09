@@ -1,4 +1,3 @@
 export interface ICommonSearchParams {
-    [key: string]: string | string[] | undefined;
-  }
-  
+  [key: string]: string | string[] | undefined
+}

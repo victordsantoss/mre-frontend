@@ -1,4 +1,4 @@
-import { cookies } from 'next/headers';
+import { cookies } from 'next/headers'
 
 /**
  * Retorna o header Authorization com o token salvo no cookie
@@ -7,9 +7,9 @@ import { cookies } from 'next/headers';
  */
 export const getDefaultHeaders = async (): Promise<HeadersInit> => {
   try {
-    const token = (await cookies()).get('AUTH_TOKEN')?.value;
-    return token ? { Authorization: `Bearer ${token}` } : {};
+    const token = (await cookies()).get('AUTH_TOKEN')?.value
+    return token ? { Authorization: `Bearer ${token}` } : {}
   } catch {
-    return {};
+    return {}
   }
-};
+}

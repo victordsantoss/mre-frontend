@@ -1,5 +1,5 @@
-import { AuthCookie } from '@/storages/cookies/auth.cookies';
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
+import { AuthCookie } from '@/storages/cookies/auth.cookies'
+import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 
 export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -8,17 +8,17 @@ export const api = axios.create({
     Accept: 'application/json',
   },
   timeout: 10000,
-});
+})
 
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    const token = AuthCookie.getToken();
+    const token = AuthCookie.getToken()
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token}`
     }
-    return config;
+    return config
   },
   (error: AxiosError) => {
-    return Promise.reject(error);
+    return Promise.reject(error)
   }
-);
+)

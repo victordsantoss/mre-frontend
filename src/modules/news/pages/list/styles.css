@@ -1,0 +1,116 @@
+.list-news {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.list-news__header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid hsl(var(--primary) / 0.3);
+  position: relative;
+}
+
+.list-news__header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary) / 0.3) 100%
+  );
+}
+
+.list-news__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .list-news__header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.list-news__header-text {
+  flex: 1;
+}
+
+.list-news__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .list-news__title {
+    font-size: 2.5rem;
+  }
+}
+
+.list-news__description {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  max-width: 42rem;
+}
+
+.list-news__content {
+  margin-top: 2rem;
+}
+
+.list-news__placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: hsl(var(--primary));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.05) 0%,
+    hsl(var(--background)) 100%
+  );
+  border: 2px dashed hsl(var(--primary) / 0.3);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .list-news__header {
+    border-bottom-color: hsl(var(--primary) / 0.4);
+  }
+
+  .list-news__header::after {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary) / 0.4) 100%
+    );
+  }
+
+  .list-news__title {
+    color: hsl(var(--primary));
+  }
+
+  .list-news__placeholder {
+    color: hsl(var(--primary));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1) 0%,
+      hsl(var(--card)) 100%
+    );
+    border-color: hsl(var(--primary) / 0.4);
+  }
+}
