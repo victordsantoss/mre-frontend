@@ -273,11 +273,6 @@ environment:
 ```
 
 ### Variáveis Disponíveis
-- `PORT` - Porta do servidor (padrão: 3000)
 - `NEXT_PUBLIC_API_URL` - URL base da API backend
-- `NODE_ENV` - Ambiente (development/production)
-- `NEXT_TELEMETRY_DISABLED` - Desabilitar telemetria do Next.js
 
 ---
-
-Desenvolvido com ❤️ usando Next.js 16 e React 19
