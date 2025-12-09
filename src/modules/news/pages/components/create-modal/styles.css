@@ -1,0 +1,237 @@
+/* Modal Overlay */
+.create-news-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.create-news-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+  z-index: 1;
+}
+
+/* Modal Content */
+.create-news-modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  z-index: 2;
+}
+
+/* Modal Header */
+.create-news-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.create-news-modal__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.create-news-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.create-news-modal__close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.create-news-modal__close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Body */
+.create-news-modal__body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: white;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Form */
+.create-news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.create-news-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-news-form__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.create-news-form__required {
+  color: hsl(0 84% 60%);
+}
+
+.create-news-form__input,
+.create-news-form__textarea {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #111827;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.create-news-form__input:focus,
+.create-news-form__textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.create-news-form__input:disabled,
+.create-news-form__textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.create-news-form__input--error {
+  border-color: hsl(0 84% 60%);
+}
+
+.create-news-form__input--error:focus {
+  border-color: hsl(0 84% 60%);
+  box-shadow: 0 0 0 3px hsl(0 84% 60% / 0.1);
+}
+
+.create-news-form__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.create-news-form__error {
+  font-size: 0.75rem;
+  color: hsl(0 84% 60%);
+  margin-top: -0.25rem;
+}
+
+/* Form Actions */
+.create-news-form__actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.create-news-form__submit {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  background: #3b82f6;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-news-form__submit:hover {
+  opacity: 0.9;
+}
+
+.create-news-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .create-news-modal {
+    padding: 0;
+  }
+
+  .create-news-modal__content {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 12px;
+  }
+
+  .create-news-modal__header {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .create-news-modal__body {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .create-news-modal__header,
+  .create-news-modal__body {
+    padding: 1rem;
+  }
+}
