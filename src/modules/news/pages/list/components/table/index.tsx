@@ -1,9 +1,13 @@
 'use client'
 
+import { useState } from 'react'
 import { IPaginatedResponse } from '@/common/types/base-pagination.types'
 import { News } from '@/services/domain/news.types'
 import { Eye, Edit, Trash2 } from '@deemlol/next-icons'
 import moment from 'moment'
+import { ViewNewsModal } from '@/modules/news/pages/components/view-modal'
+import { UpdateNewsModal } from '@/modules/news/pages/components/update-modal'
+import { DeleteNewsModal } from '@/modules/news/pages/components/delete-modal'
 import { Pagination } from './components/pagination'
 import { useTableModel } from './table.model'
 import './styles.css'
@@ -13,6 +17,11 @@ interface INewsTableProps {
 }
 
 export function NewsTable({ news }: INewsTableProps) {
+  const [selectedNewsCode, setSelectedNewsCode] = useState<string | null>(null)
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false)
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+
   const {
     page,
     limit,
@@ -25,6 +34,36 @@ export function NewsTable({ news }: INewsTableProps) {
 
   const { data, meta } = news
   const { total, totalPages } = meta
+
+  function handleViewNews(code: string) {
+    setSelectedNewsCode(code)
+    setIsViewModalOpen(true)
+  }
+
+  function handleCloseViewModal() {
+    setIsViewModalOpen(false)
+    setSelectedNewsCode(null)
+  }
+
+  function handleUpdateNews(code: string) {
+    setSelectedNewsCode(code)
+    setIsUpdateModalOpen(true)
+  }
+
+  function handleCloseUpdateModal() {
+    setIsUpdateModalOpen(false)
+    setSelectedNewsCode(null)
+  }
+
+  function handleDeleteNews(code: string) {
+    setSelectedNewsCode(code)
+    setIsDeleteModalOpen(true)
+  }
+
+  function handleCloseDeleteModal() {
+    setIsDeleteModalOpen(false)
+    setSelectedNewsCode(null)
+  }
 
   const renderPageNumbers = () => {
     const pages = []
@@ -130,7 +169,7 @@ export function NewsTable({ news }: INewsTableProps) {
                 >
                   <div className="news-table__actions">
                     <button
-                      onClick={() => console.log('Visualizar', newsItem.code)}
+                      onClick={() => handleViewNews(newsItem.code)}
                       className="news-table__action-btn news-table__action-btn--view"
                       aria-label="Visualizar notícia"
                       title="Visualizar"
@@ -138,7 +177,7 @@ export function NewsTable({ news }: INewsTableProps) {
                       <Eye size={18} />
                     </button>
                     <button
-                      onClick={() => console.log('Editar', newsItem.code)}
+                      onClick={() => handleUpdateNews(newsItem.code)}
                       className="news-table__action-btn news-table__action-btn--edit"
                       aria-label="Editar notícia"
                       title="Editar"
@@ -146,7 +185,7 @@ export function NewsTable({ news }: INewsTableProps) {
                       <Edit size={18} />
                     </button>
                     <button
-                      onClick={() => console.log('Excluir', newsItem.code)}
+                      onClick={() => handleDeleteNews(newsItem.code)}
                       className="news-table__action-btn news-table__action-btn--delete"
                       aria-label="Excluir notícia"
                       title="Excluir"
@@ -168,6 +207,24 @@ export function NewsTable({ news }: INewsTableProps) {
         goToNextPage={goToNextPage}
         goToPage={goToPage}
         renderPageNumbers={renderPageNumbers}
+      />
+
+      <ViewNewsModal
+        isOpen={isViewModalOpen}
+        onClose={handleCloseViewModal}
+        newsCode={selectedNewsCode}
+      />
+
+      <UpdateNewsModal
+        isOpen={isUpdateModalOpen}
+        onClose={handleCloseUpdateModal}
+        newsCode={selectedNewsCode}
+      />
+
+      <DeleteNewsModal
+        isOpen={isDeleteModalOpen}
+        onClose={handleCloseDeleteModal}
+        newsCode={selectedNewsCode}
       />
     </div>
   )

@@ -8,4 +8,18 @@ export const NewsService = {
     const { data } = await api.post('/news', payload)
     return data
   },
+  get: async (code: string): Promise<News.INews> => {
+    const { data } = await api.get(`/news/${code}`)
+    return data
+  },
+  delete: async (code: string): Promise<void> => {
+    await api.delete(`/news/${code}`)
+  },
+  update: async (
+    code: string,
+    payload: News.IUpdateNewsRequest
+  ): Promise<News.IUpdateNewsResponse> => {
+    const { data } = await api.put(`/news/${code}`, payload)
+    return data
+  },
 }

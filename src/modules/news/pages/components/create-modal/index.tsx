@@ -30,9 +30,7 @@ export function CreateNewsModal({ isOpen, onClose }: ICreateNewsModalProps) {
   const createNewsMutation = useMutation({
     mutationFn: NewsService.create,
     onSuccess: async () => {
-      // Revalidate server-side cache
       await revalidateNewsList()
-      // Invalidate client-side queries
       queryClient.invalidateQueries({ queryKey: ['news'] })
       form.reset()
       onClose()
