@@ -1,8 +1,8 @@
 import { api } from '@/configs/api'
-import { News } from '../domain/news.types'
+import { Address } from '../domain/address.types'
 
 export const AddressService = {
-  getByCep: async (cep: string): Promise<News.INews> => {
+  getByCep: async (cep: string): Promise<Address.IGetByCepResponse> => {
     const { data } = await api.get(`/address/${cep}`)
     return data
   },
