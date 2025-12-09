@@ -21,9 +21,35 @@
   font-weight: 700;
   color: #111827;
   margin: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.onboarding-header__logo h1:hover {
+  color: #3b82f6;
 }
 
 .onboarding-header__nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.onboarding-header__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.onboarding-header__link:hover {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.onboarding-header__link:active {
+  transform: scale(0.98);
 }
