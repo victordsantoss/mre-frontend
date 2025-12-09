@@ -295,7 +295,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 
 =======
 # .env.local
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_API_URL=http://localhost:3000
 >>>>>>> Stashed changes
 ```
 
@@ -318,22 +318,6 @@ environment:
 - `NEXT_PUBLIC_API_URL` - URL base da API backend
 - `NODE_ENV` - Ambiente (development/production)
 - `NEXT_TELEMETRY_DISABLED` - Desabilitar telemetria do Next.js
-
-## 🤝 Contribuindo
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto é privado e confidencial.
-
-## 📧 Contato
-
-Para dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento.
 
 ---
 
