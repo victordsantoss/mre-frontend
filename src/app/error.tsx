@@ -1,6 +1,5 @@
 'use client'
 
-
 import { useEffect } from 'react'
 
 export default function ErrorPage({
@@ -14,7 +13,5 @@ export default function ErrorPage({
     console.error(error)
   }, [error])
 
-  return (
-    <></>
-  )
+  return <></>
 }

@@ -1,7 +1,11 @@
-'use server';
+'use server'
 
-import { revalidateTag } from 'next/cache';
+import { revalidateTag } from 'next/cache'
 
 export async function revalidateAllTags() {
-  revalidateTag('*');
+  revalidateTag('*')
+}
+
+export async function revalidateNewsList() {
+  revalidateTag('list-news')
 }

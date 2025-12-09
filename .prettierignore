@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+package-lock.json
+
+# Build output
+.next
+out
+dist
+build
+
+# Cache
+.cache
+.eslintcache
+
+# Env files
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# Public assets
+public
+
