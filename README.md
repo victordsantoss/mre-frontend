@@ -257,22 +257,3 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000
 >>>>>>> Stashed changes
 ```
-
-### Docker
-Configure no `docker-compose.yml`:
-```yaml
-environment:
-  # Backend no host (Mac/Windows/Linux com Docker Desktop)
-  - NEXT_PUBLIC_API_URL=http://host.docker.internal:8000
-  
-  # Ou backend em outro container
-  # - NEXT_PUBLIC_API_URL=http://nome-do-container-backend:8000
-  
-  # Ou API externa
-  # - NEXT_PUBLIC_API_URL=https://api.seudominio.com
-```
-
-### Variáveis Disponíveis
-- `NEXT_PUBLIC_API_URL` - URL base da API backend
-
----
