@@ -291,15 +291,8 @@ const data = await ServiceName.method()
 ## 🔐 Variáveis de Ambiente
 
 ```env
-# Node Environment
-NODE_ENV=production
+NEXT_PUBLIC_API_URL=http://localhost:3000
 
-# Next.js
-NEXT_TELEMETRY_DISABLED=1
-
-# API Configuration (exemplo)
-NEXT_PUBLIC_API_URL=http://localhost:8000/api
-API_URL=http://backend:8000/api
 ```
 
 ## 🤝 Contribuindo
