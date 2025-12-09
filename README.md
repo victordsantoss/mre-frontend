@@ -27,7 +27,6 @@ Sistema de gerenciamento de notícias e consulta de endereços desenvolvido com 
 - **Zod 4.1** - Validação de schemas
 
 ### UI e Estilização
-- **Tailwind CSS 4** - Framework CSS utility-first
 - **Next Icons** - Biblioteca de ícones
 - **CSS Modules** - Estilos com escopo local
 
@@ -75,16 +74,6 @@ npm run dev
 ```
 
 A aplicação estará disponível em [http://localhost:3000](http://localhost:3000)
-
-### Modo Produção
-
-```bash
-# Build da aplicação
-npm run build
-
-# Iniciar servidor de produção
-npm start
-```
 
 ## 🐳 Docker
 
