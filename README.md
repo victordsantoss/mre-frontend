@@ -62,7 +62,7 @@ npm install
 3. **Configure as variáveis de ambiente** (opcional)
 ```bash
 # Copie o arquivo de exemplo e configure
-cp .env.example .env.local
+cp .env.example .env
 ```
 
 ## 🎯 Como Usar
@@ -73,48 +73,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-A aplicação estará disponível em [http://localhost:3000](http://localhost:3000)
-
-## 🐳 Docker
-
-### Configuração da API
-
-Antes de rodar com Docker, configure a URL da API no `docker-compose.yml`:
-
-```yaml
-environment:
-  - NEXT_PUBLIC_API_URL=http://host.docker.internal:8000  # Ajuste para seu backend
-```
-
-### Usando Docker Compose (Recomendado)
-
-```bash
-# Subir a aplicação
-docker-compose up
-
-# Subir em background
-docker-compose up -d
-
-# Ver logs
-docker-compose logs -f
-
-# Parar a aplicação
-docker-compose down
-```
-
 A aplicação estará disponível em [http://localhost:3001](http://localhost:3001)
-
-### Usando Docker direto
-
-```bash
-# Build da imagem
-docker build -t mre-frontend .
-
-# Rodar o container
-docker run -p 3001:3001 -e PORT=3001 mre-frontend
-```
-
-📖 Veja mais detalhes em [DOCKER.md](./DOCKER.md)
 
 ## 📁 Estrutura do Projeto
 
